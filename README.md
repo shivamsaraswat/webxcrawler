@@ -2,31 +2,11 @@
 
 WebXCrawler is a fast static crawler to crawl a website and get all the links.
 
-## Installation Through Poetry
-This package is built with [Poetry](https://python-poetry.org/). To set up the virtual environment and install dependencies, follow these steps:
+## Installation
+To install dependencies, use the following command:
 
 ```bash
-# Install the dependencies
-poetry install
-```
-
-To run the program, use the following command:
-
-```bash
-python3 webxcrawler -h
-```
-
-### Installation with Docker
-This package can also be used with [Docker](https://www.docker.com/). To set up the Docker environment, follow these steps:
-
-```bash
-docker build -t webxcrawler:latest .
-```
-
-To run the program, use the following command:
-
-```bash
-docker run --rm webxcrawler -h
+pip3 install -r requirements.txt
 ```
 
 # Using the WebXCrawler
@@ -44,14 +24,14 @@ python3 webxcrawler -h
 The output shown below are the latest supported commands.
 
 ```bash
-██╗    ██╗███████╗██████╗ ██╗  ██╗ ██████╗██████╗  █████╗ ██╗    ██╗██╗     ███████╗██████╗ 
+██╗    ██╗███████╗██████╗ ██╗  ██╗ ██████╗██████╗  █████╗ ██╗    ██╗██╗     ███████╗██████╗
 ██║    ██║██╔════╝██╔══██╗╚██╗██╔╝██╔════╝██╔══██╗██╔══██╗██║    ██║██║     ██╔════╝██╔══██╗
 ██║ █╗ ██║█████╗  ██████╔╝ ╚███╔╝ ██║     ██████╔╝███████║██║ █╗ ██║██║     █████╗  ██████╔╝
 ██║███╗██║██╔══╝  ██╔══██╗ ██╔██╗ ██║     ██╔══██╗██╔══██║██║███╗██║██║     ██╔══╝  ██╔══██╗
 ╚███╔███╔╝███████╗██████╔╝██╔╝ ██╗╚██████╗██║  ██║██║  ██║╚███╔███╔╝███████╗███████╗██║  ██║
  ╚══╝╚══╝ ╚══════╝╚═════╝ ╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚══╝╚══╝ ╚══════╝╚══════╝╚═╝  ╚═╝
                                            Coded with Love by Shivam Saraswat (@cybersapien)
-                                                                                                                                                                                            
+
 usage: python3 webxcrawler [-h] -u URL [-d int] [-t int] [-o file_path]
 
 WebXCrawler is a fast static crawler to crawl a website and get all the links.
@@ -65,12 +45,5 @@ options:
   -o file_path, --output file_path
                         file to write output to
 
-Example: python3 webxcrawler -u https://toscrape.com -d 2 -t 10 -o /tmp/toscrape
-```
-## Using the Docker
-
-A typical run through Docker would look as follows:
-
-```bash
-docker run -it --rm webxcrawler -u URL
+Example: python3 webxcrawler -u https://example.com -d 2 -t 10 -o /tmp/toscrape
 ```

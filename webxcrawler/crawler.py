@@ -13,28 +13,28 @@ headers = {"User-Agent": user_agent}
 def remove_fragment(url:str) -> str:
 	"""
 	Remove the fragment from the URL
-		
+
 		:param url: URL
-		
+
 		:return: URL without fragment
 	"""
-	
+
 	if "#" in url:
 		return url.split("#")[0]
-	
+
 	return url
 
 def crawl_urls(base_url:str, main_domain:str, visited:set, max_depth, depth=1) -> set:
 	"""
 	Crawl the URLs of the website
-		
+
 		:param base_url: Base URL
 		:param path: Path of the URL
 		:param main_domain: Main domain of the website (e.g. example.com)
 		:param visited: Visited URLs set, to avoid duplicate crawling
 		:param max_depth: Maximum depth of the crawling
 		:param depth: Current depth of the crawling
-		
+
 		:return: Set of Crawled URLs
 	"""
 
@@ -58,9 +58,9 @@ def crawl_urls(base_url:str, main_domain:str, visited:set, max_depth, depth=1) -
 				for link in soup.find_all(["base", "link", "a", "area"]):
 
 					href = link.get("href")
-					
+
 					if href:
-					
+
 						href = remove_fragment(href)
 
 						# check if the URL is already visited or not
@@ -85,6 +85,11 @@ def crawl_urls(base_url:str, main_domain:str, visited:set, max_depth, depth=1) -
 
 							# handle relative urls without "/", excluding cases such as "file://", "android-app://", "ios-app://", etc.
 							elif not href.startswith("http") and href[0].isalpha() and not href.startswith("//") and not href.split("//")[0][-1]==":":
+
+								# excluding cases such as "javascript:void(0)", etc.
+								if len(href.split(":")) > 1:
+									continue
+
 								url = urljoin(base_url, href)
 								crawl_urls(url, main_domain, visited, max_depth, depth + 1)
 								print(url)
