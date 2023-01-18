@@ -18,11 +18,12 @@ def logo():
 	print(colored('					   Coded with Love by Shivam Saraswat (@cybersapien)\n', 'green', attrs=['bold']))
 
 def parse_arguments() -> Tuple[str, int, int, str]:
-	parser = argparse.ArgumentParser(prog='python3 webxcrawler', description ="WebXCrawler is a fast static crawler to crawl a website and get all the links.", epilog="Example: python3 webxcrawler -u https://example.com -d 2 -t 10 -o /tmp/toscrape")
+	parser = argparse.ArgumentParser(prog='python3 webxcrawler', description ="WebXCrawler is a fast static crawler to crawl a website and get all the links.", epilog="Example: python3 webxcrawler -u https://example.com -d 2 -t 10 -o /tmp/tofile")
 	parser.add_argument("-u", "--url", type=str, required=True, help="URL to crawl")
 	parser.add_argument("-d", "--depth", type=int, metavar='int', default=2, help="maximum depth to crawl (default 2)")
 	parser.add_argument("-t", "--threads", type=int, metavar='int', default=2, help="number of threads to use (default 2)")
 	parser.add_argument("-o", "--output", type=argparse.FileType('w'), metavar='file_path', action='store', dest='output', help="file to write output to")
+	parser.add_argument("-V", "--version", action='version', version='1.0', help="show webxcrawler version number and exit")
 
 	args = parser.parse_args()
 	url = args.url
