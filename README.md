@@ -3,6 +3,7 @@
 WebXCrawler is a fast static crawler to crawl a website and get all the links.
 
 ## Installation Through PIP
+
 To install dependencies, use the following command:
 
 ```bash
@@ -10,6 +11,7 @@ pip3 install -r requirements.txt
 ```
 
 ## Installation Through Poetry
+
 This package is built with [Poetry](https://python-poetry.org/). To set up the virtual environment and install dependencies, follow these steps (trying using with sudo, if you get any error):
 
 ```bash
@@ -17,14 +19,17 @@ poetry install
 ```
 
 ### Installation with Docker
+
 This tool can also be used with [Docker](https://www.docker.com/). To set up the Docker environment, follow these steps (trying using with sudo, if you get any error):
 
 ```bash
 docker build -t webxcrawler:latest .
 ```
 
-# Using the WebXCrawler
+## Using the WebXCrawler
+
 To run the WebXCrawler on a website, use the '-u' flag and provide the URL as an argument:
+
 ```bash
 python3 webxcrawler -u URL
 ```
@@ -69,3 +74,6 @@ A typical run through Docker would look as follows:
 
 ```bash
 docker run -it --rm webxcrawler -u URL
+```
+
+**NOTE:** Do check out **[Golang Version of WebXCrawler](https://github.com/shivamsaraswat/webxcrawler_go)**.
