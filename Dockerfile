@@ -2,7 +2,7 @@
 # Run: docker run -it --rm webxcrawler -h
 
 # Base Image
-FROM python:3.10-alpine
+FROM python:3.10-alpine@sha256:de5a0b7e62982eb07fc97e890e848931c4406d9978e9b3747da1c3daa6e85ae8
 
 # Maintainer
 LABEL maintainer="Shivam Saraswat <thecybersapien@protonmail.com>"
