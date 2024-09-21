@@ -1,4 +1,6 @@
 # WebXCrawler
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fshivamsaraswat%2Fwebxcrawler.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fshivamsaraswat%2Fwebxcrawler?ref=badge_shield)
+
 
 WebXCrawler is a fast static crawler to crawl a website and get all the links.
 
@@ -77,3 +79,7 @@ docker run -it --rm webxcrawler -u URL
 ```
 
 **NOTE:** Do check out **[Golang Version of WebXCrawler](https://github.com/shivamsaraswat/webxcrawler_go)**.
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fshivamsaraswat%2Fwebxcrawler.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fshivamsaraswat%2Fwebxcrawler?ref=badge_large)
